@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects - The Queen AI</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/projects.css">
+</head>
+<body>
+    <div class="projects-container">
+        <div class="projects-header">
+            <div class="header-content">
+                <div class="header-top">
+                    <div>
+                        <h1>The Queen AI</h1>
+                        <h2>My Projects</h2>
+                    </div>
+                    <div class="header-actions-projects">
+                        <div id="userDetailsProjects" class="user-details-header" style="display: none;">
+                            <div class="user-avatar-small" id="userAvatarSmallProjects"></div>
+                            <div class="user-info-small">
+                                <span id="userNameProjects" class="user-name"></span>
+                                <span id="userPlanProjects" class="user-plan"></span>
+                            </div>
+                        </div>
+                        <a href="home.html" class="btn-link">Home</a>
+                        <a href="designer.html" class="btn-link">Designer</a>
+                        <button id="logoutBtnProjects" class="btn-link logout" style="display: none;">Logout</button>
+                    </div>
+                </div>
+                <a href="designer.html" class="back-link">← Back to Designer</a>
+            </div>
+        </div>
+
+        <div class="projects-content">
+            <div class="projects-toolbar">
+                <button id="createNewBtn" class="btn-create">+ Create New Project</button>
+                <div class="projects-count">
+                    <span id="projectsCount">0</span> project(s)
+                </div>
+            </div>
+
+            <div id="projectsList" class="projects-list">
+                <!-- Projects will be loaded here -->
+            </div>
+
+            <div id="emptyState" class="empty-state" style="display: none;">
+                <div class="empty-icon">📁</div>
+                <h3>No Projects Yet</h3>
+                <p>Create your first website project to get started!</p>
+                <button class="btn-create" onclick="window.location.href='designer.html'">Create New Project</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Detail Modal -->
+    <div id="projectModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2 id="modalProjectName">Project Name</h2>
+            <div class="modal-project-info">
+                <p><strong>Created:</strong> <span id="modalProjectCreated"></span></p>
+                <p><strong>Last Modified:</strong> <span id="modalProjectModified"></span></p>
+                <p><strong>Components:</strong> <span id="modalProjectComponents"></span></p>
+            </div>
+            <div class="modal-actions">
+                <button id="modalOpenBtn" class="btn-modal btn-primary">Open Project</button>
+                <button id="modalDeleteBtn" class="btn-modal btn-danger">Delete Project</button>
+                <button id="modalExportBtn" class="btn-modal btn-secondary">Export</button>
+                <button id="modalCloseBtn" class="btn-modal btn-secondary">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/projects.js"></script>
+</body>
+</html>

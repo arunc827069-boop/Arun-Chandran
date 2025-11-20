@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="The Queen AI - Advanced Website Designer with Drag & Drop Editor">
+    <title>The Queen AI - Advanced Website Designer</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/editor.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/user-profile.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <header class="top-bar">
+        <div class="top-bar-left">
+            <h1 class="logo">The Queen AI</h1>
+        </div>
+        <div class="top-bar-right">
+            <div class="user-profile-container">
+                <button id="userProfileBtn" class="user-profile-btn">
+                    <span class="user-initials" id="userInitials"></span>
+                </button>
+                <div id="userDetailsDropdown" class="user-details-dropdown" style="display: none;">
+                    <div class="user-details-header">
+                        <div class="user-avatar-large" id="userAvatarLarge"></div>
+                        <h3 id="userFullName">User Name</h3>
+                        <p id="userEmail">user@email.com</p>
+                        <p id="userPlanDisplay" class="user-plan-badge"></p>
+                    </div>
+                    <div class="user-details-body">
+                        <div class="user-detail-item">
+                            <strong>Username:</strong>
+                            <span id="userDetailUsername"></span>
+                        </div>
+                        <div class="user-detail-item">
+                            <strong>Account Type:</strong>
+                            <span id="userDetailRole"></span>
+                        </div>
+                        <div class="user-detail-item">
+                            <strong>Subscription:</strong>
+                            <span id="userDetailSubscription"></span>
+                        </div>
+                        <div class="user-detail-item">
+                            <strong>Expires:</strong>
+                            <span id="userDetailExpiry"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button id="basicModeBtn" class="btn btn-secondary">Basic Mode</button>
+            <button id="projectsBtn" class="btn btn-secondary">Projects</button>
+            <button id="subscriptionBtn" class="btn btn-secondary">Subscription</button>
+            <button id="saveBtn" class="btn btn-secondary">Save Project</button>
+            <button id="exportBtn" class="btn btn-primary">Export Website</button>
+            <button id="logoutBtn" class="btn btn-secondary">Logout</button>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Left Sidebar - Component Library -->
+        <aside class="sidebar sidebar-left">
+            <h2>Component Library</h2>
+            <div class="component-list" id="componentList">
+                <!-- Components will be dynamically added here -->
+            </div>
+        </aside>
+
+        <!-- Center - Editing Canvas -->
+        <main class="canvas-container">
+            <div class="canvas-header">
+                <h2>Website Preview</h2>
+                <div class="canvas-controls">
+                    <button id="clearBtn" class="btn btn-small btn-danger">Clear Canvas</button>
+                </div>
+            </div>
+            <div class="canvas" id="canvas">
+                <div class="canvas-placeholder">
+                    <p>Enter a website description below or drag components from the library to start building.</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Right Sidebar - Properties Panel -->
+        <aside class="sidebar sidebar-right">
+            <h2>Properties</h2>
+            <div class="properties-panel" id="propertiesPanel">
+                <p class="no-selection">No element selected</p>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Bottom - Text Input Area -->
+    <footer class="bottom-panel">
+        <div class="text-input-container">
+            <label for="textInput">Describe your website:</label>
+            <textarea id="textInput" placeholder="e.g., Create a portfolio website for a photographer with gallery, about section, and contact form"></textarea>
+            <button id="generateBtn" class="btn btn-primary">Generate Website</button>
+        </div>
+    </footer>
+
+    <!-- Contact Footer -->
+    <div class="contact-footer" style="background: #2c3e50; color: white; padding: 1rem 2rem; text-align: center; font-size: 0.9rem;">
+        <p><strong>Contact:</strong> Arun Chandran | Email: <a href="mailto:arun.chandran@thequeenai.com" style="color: #3498db;">arun.chandran@thequeenai.com</a> | The Queen AI &copy; 2024</p>
+    </div>
+
+    <!-- Load all JavaScript files -->
+    <script src="js/auth.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/template-engine.js"></script>
+    <script src="js/editor.js"></script>
+    <script src="js/export.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

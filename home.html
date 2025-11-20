@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="The Queen AI - AI-Powered Website Builder">
+    <title>The Queen AI - Home</title>
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-content">
+            <h1 class="main-logo">The Queen AI</h1>
+            <p class="tagline">Create Beautiful Websites with AI</p>
+        </div>
+        <div class="header-actions">
+            <div id="userDetailsHeader" class="user-details-header" style="display: none;">
+                <div class="user-avatar-small" id="userAvatarSmall"></div>
+                <div class="user-info-small">
+                    <span id="userNameHeader" class="user-name"></span>
+                    <span id="userPlanHeader" class="user-plan"></span>
+                </div>
+            </div>
+            <button id="loginBtn" class="btn btn-outline">Sign In</button>
+            <button id="signupBtn" class="btn btn-primary">Sign Up</button>
+            <button id="logoutBtn" class="btn btn-secondary" style="display: none;">Logout</button>
+        </div>
+    </header>
+
+    <!-- Admin Info (Only visible if admin is logged in) -->
+    <div id="adminInfo" class="admin-info" style="display: none;">
+        <div class="admin-badge">
+            <span class="admin-icon">👑</span>
+            <div class="admin-details">
+                <h3 id="adminName">Admin</h3>
+                <p>Administrator Account</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <h2>Welcome to The Queen AI</h2>
+            <p class="hero-description">Transform your ideas into stunning websites with the power of artificial intelligence</p>
+        </section>
+
+        <!-- Action Buttons Section -->
+        <section class="buttons-section">
+            <h3>Get Started</h3>
+            <div class="button-grid">
+                <button class="action-btn" id="basicModeBtn">
+                    <span class="btn-icon">🚀</span>
+                    <h4>Basic Mode</h4>
+                    <p>Simple text-to-website generator</p>
+                </button>
+
+                <button class="action-btn" id="advancedModeBtn">
+                    <span class="btn-icon">⚡</span>
+                    <h4>Advanced Mode</h4>
+                    <p>Full-featured drag-and-drop editor with component library</p>
+                </button>
+
+                <button class="action-btn" id="projectsBtn">
+                    <span class="btn-icon">📁</span>
+                    <h4>My Projects</h4>
+                    <p>View and manage your projects</p>
+                </button>
+
+                <button class="action-btn" id="subscriptionBtn">
+                    <span class="btn-icon">💎</span>
+                    <h4>Subscription</h4>
+                    <p>Choose or upgrade your plan</p>
+                </button>
+
+                <button class="action-btn" id="aboutBtn">
+                    <span class="btn-icon">ℹ️</span>
+                    <h4>About</h4>
+                    <p>Learn more about The Queen AI</p>
+                </button>
+
+                <button class="action-btn" id="contactBtn">
+                    <span class="btn-icon">📧</span>
+                    <h4>Contact</h4>
+                    <p>Get in touch with us</p>
+                </button>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section">
+            <h3>Features</h3>
+            <div class="features-grid">
+                <button class="feature-card" id="aiPoweredBtn">
+                    <div class="feature-icon">🎨</div>
+                    <h4>AI-Powered Design</h4>
+                    <p>Generate websites from simple text descriptions</p>
+                    <span class="feature-action">Try Now →</span>
+                </button>
+                <button class="feature-card" id="dragDropBtn">
+                    <div class="feature-icon">🖱️</div>
+                    <h4>Drag & Drop Editor</h4>
+                    <p>Build and customize with ease</p>
+                    <span class="feature-action">Try Now →</span>
+                </button>
+                <button class="feature-card" id="responsiveBtn">
+                    <div class="feature-icon">📱</div>
+                    <h4>Responsive Design</h4>
+                    <p>Perfect on all devices</p>
+                    <span class="feature-action">Learn More →</span>
+                </button>
+                <button class="feature-card" id="fastExportBtn">
+                    <div class="feature-icon">⚡</div>
+                    <h4>Fast Export</h4>
+                    <p>Download or deploy instantly</p>
+                    <span class="feature-action">Export Now →</span>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p><strong>Contact:</strong> Arun Chandran</p>
+            <p>Email: <a href="mailto:arun.chandran@thequeenai.com">arun.chandran@thequeenai.com</a></p>
+            <p>The Queen AI &copy; 2024. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Load JavaScript -->
+    <script src="js/auth.js"></script>
+    <script src="js/home.js"></script>
+</body>
+</html>

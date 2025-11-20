@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - The Queen AI</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/signup.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="signup-card">
+            <div class="login-header">
+                <div class="header-top-subscription">
+                    <div>
+                        <h1>The Queen AI</h1>
+                        <p>Create your account and choose a plan</p>
+                    </div>
+                    <div class="header-actions-subscription">
+                        <div id="userDetailsSignup" class="user-details-header" style="display: none;">
+                            <div class="user-avatar-small" id="userAvatarSmallSignup"></div>
+                            <div class="user-info-small">
+                                <span id="userNameSignup" class="user-name"></span>
+                                <span id="userPlanSignup" class="user-plan"></span>
+                            </div>
+                        </div>
+                        <a href="home.html" class="btn-link">Home</a>
+                        <a href="index.html" class="btn-link">Sign In</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <p><strong>Contact:</strong> Arun Chandran</p>
+                <p>Email: <a href="mailto:arun.chandran@thequeenai.com">arun.chandran@thequeenai.com</a></p>
+            </div>
+
+            <form id="signupForm" class="login-form">
+                <div class="form-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" required placeholder="Enter your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="signup-username">Username</label>
+                    <input type="text" id="signup-username" name="username" required placeholder="Choose a username">
+                </div>
+                
+                <div class="form-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" name="email" required placeholder="Enter your email">
+                </div>
+                
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" name="password" required placeholder="Create a password" minlength="6">
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirmPassword" required placeholder="Confirm your password">
+                </div>
+
+                <!-- Subscription Plans -->
+                <div class="subscription-section">
+                    <h3>Choose Your Plan</h3>
+                    <div class="plans-grid">
+                        <div class="plan-card" data-plan="trial">
+                            <div class="plan-badge free">Free</div>
+                            <h4>Free Trial</h4>
+                            <div class="plan-price">
+                                <span class="price">₹0</span>
+                                <span class="period">30 days</span>
+                            </div>
+                            <ul class="plan-features">
+                                <li>✓ 30 days free access</li>
+                                <li>✓ All features included</li>
+                                <li>✓ Full website builder</li>
+                            </ul>
+                            <button type="button" class="plan-select-btn" data-plan="trial">Select Plan</button>
+                        </div>
+
+                        <div class="plan-card popular" data-plan="monthly">
+                            <div class="plan-badge popular-badge">Popular</div>
+                            <h4>Monthly Plan</h4>
+                            <div class="plan-price">
+                                <span class="price">₹30</span>
+                                <span class="period">per month</span>
+                            </div>
+                            <ul class="plan-features">
+                                <li>✓ 1 month access</li>
+                                <li>✓ All features included</li>
+                                <li>✓ Priority support</li>
+                                <li>✓ Regular updates</li>
+                            </ul>
+                            <button type="button" class="plan-select-btn" data-plan="monthly">Select Plan</button>
+                        </div>
+
+                        <div class="plan-card" data-plan="yearly">
+                            <div class="plan-badge save">Save 17%</div>
+                            <h4>Yearly Plan</h4>
+                            <div class="plan-price">
+                                <span class="price">₹300</span>
+                                <span class="period">per year</span>
+                            </div>
+                            <ul class="plan-features">
+                                <li>✓ 12 months access</li>
+                                <li>✓ All features included</li>
+                                <li>✓ Priority support</li>
+                                <li>✓ Best value</li>
+                            </ul>
+                            <button type="button" class="plan-select-btn" data-plan="yearly">Select Plan</button>
+                        </div>
+
+                        <div class="plan-card premium" data-plan="lifetime">
+                            <div class="plan-badge premium-badge">Best Deal</div>
+                            <h4>Lifetime</h4>
+                            <div class="plan-price">
+                                <span class="price">₹1,000</span>
+                                <span class="period">one-time</span>
+                            </div>
+                            <ul class="plan-features">
+                                <li>✓ Lifetime access</li>
+                                <li>✓ All features forever</li>
+                                <li>✓ Premium support</li>
+                                <li>✓ All future updates</li>
+                            </ul>
+                            <button type="button" class="plan-select-btn" data-plan="lifetime">Select Plan</button>
+                        </div>
+                    </div>
+                    <input type="hidden" id="selectedPlan" name="plan" value="trial" required>
+                </div>
+
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="agreeTerms" required>
+                        <span>I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></span>
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn-login">Create Account</button>
+                
+                <div class="signup-link">
+                    <p>Already have an account? <a href="index.html">Sign in</a></p>
+                </div>
+            </form>
+            
+            <div id="errorMessage" class="error-message" style="display: none;"></div>
+            <div id="successMessage" class="success-message" style="display: none;"></div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/signup.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="Basic Website Creator - The Queen AI - Simple Text to Website Generator">
+    <title>Basic Website Creator - The Queen AI</title>
+    <link rel="stylesheet" href="css/basic.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <header class="top-bar">
+        <div class="top-bar-left">
+            <h1 class="logo">The Queen AI</h1>
+            <p class="subtitle">Basic Website Creator</p>
+        </div>
+        <div class="top-bar-right">
+            <div class="user-profile-container">
+                <button id="userProfileBtn" class="user-profile-btn">
+                    <span class="user-initials" id="userInitials"></span>
+                </button>
+            </div>
+            <button id="homeBtn" class="btn btn-secondary" style="display: none;">Home</button>
+            <button id="advancedModeBtn" class="btn btn-secondary">Advanced Mode</button>
+            <button id="exportBtn" class="btn btn-primary">Download HTML</button>
+            <button id="logoutBtn" class="btn btn-secondary">Logout</button>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Left Panel - Input -->
+        <div class="input-panel">
+            <h2>Website Configuration</h2>
+            
+            <!-- Technology Stack Selection -->
+            <div class="config-section">
+                <h3>Technology Stack</h3>
+                <div class="option-buttons" id="techStack">
+                    <button class="option-btn active" data-value="vanilla">Vanilla HTML/CSS/JS</button>
+                    <button class="option-btn" data-value="react">React/Next.js</button>
+                    <button class="option-btn" data-value="vue">Vue.js</button>
+                    <button class="option-btn" data-value="other">Other</button>
+                </div>
+            </div>
+
+            <!-- AI Generation Method -->
+            <div class="config-section">
+                <h3>AI Generation Method</h3>
+                <div class="option-buttons" id="aiMethod">
+                    <button class="option-btn active" data-value="template">Template-Based</button>
+                    <button class="option-btn" data-value="api">External AI API</button>
+                    <button class="option-btn" data-value="service">Pre-built Service</button>
+                    <button class="option-btn" data-value="custom">Custom Model</button>
+                </div>
+            </div>
+
+            <!-- Features Level -->
+            <div class="config-section">
+                <h3>Features Level</h3>
+                <div class="option-buttons" id="featuresLevel">
+                    <button class="option-btn active" data-value="basic">Basic</button>
+                    <button class="option-btn" data-value="advanced">Advanced</button>
+                    <button class="option-btn" data-value="full">Full-Featured</button>
+                </div>
+            </div>
+
+            <!-- Export Options -->
+            <div class="config-section">
+                <h3>Export Options</h3>
+                <div class="option-buttons" id="exportOption">
+                    <button class="option-btn active" data-value="download">Download Files</button>
+                    <button class="option-btn" data-value="deploy">Auto Deploy</button>
+                    <button class="option-btn" data-value="copy">Copy Code</button>
+                </div>
+            </div>
+
+            <!-- Website Description -->
+            <div class="config-section">
+                <h3>Enter Your Website Description</h3>
+                <textarea id="textInput" class="text-input" placeholder="Example: Create a simple landing page for a restaurant with header, hero section, menu items, and contact form..."></textarea>
+            </div>
+
+            <button id="generateBtn" class="btn-generate">Generate Website</button>
+            
+            <div class="examples">
+                <h3>Example Descriptions:</h3>
+                <ul>
+                    <li onclick="fillExample('Create a portfolio website for a photographer')">Portfolio for photographer</li>
+                    <li onclick="fillExample('Create a business website for a coffee shop')">Business website for coffee shop</li>
+                    <li onclick="fillExample('Create a landing page for a fitness center')">Landing page for fitness center</li>
+                    <li onclick="fillExample('Create a personal blog website')">Personal blog website</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Right Panel - Preview -->
+        <div class="preview-panel">
+            <div class="preview-header">
+                <h2>Website Preview</h2>
+                <button id="refreshBtn" class="btn-refresh">Refresh</button>
+            </div>
+            <div id="preview" class="preview-container">
+                <div class="preview-placeholder">
+                    <p>Enter a website description on the left and click "Generate Website" to see the preview.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Footer -->
+    <footer class="contact-footer">
+        <p><strong>Contact:</strong> Arun Chandran | Email: <a href="mailto:arun.chandran@thequeenai.com">arun.chandran@thequeenai.com</a> | The Queen AI &copy; 2024</p>
+    </footer>
+
+    <!-- Load JavaScript -->
+    <script src="js/auth.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/template-engine.js"></script>
+    <script src="js/basic.js"></script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Plans - The Queen AI</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/signup.css">
+    <link rel="stylesheet" href="css/subscription.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="signup-card">
+            <div class="login-header">
+                <div class="header-top-subscription">
+                    <div>
+                        <h1>The Queen AI</h1>
+                        <p>Choose or Upgrade Your Plan</p>
+                    </div>
+                    <div class="header-actions-subscription">
+                        <div id="userDetailsSubscription" class="user-details-header" style="display: none;">
+                            <div class="user-avatar-small" id="userAvatarSmallSubscription"></div>
+                            <div class="user-info-small">
+                                <span id="userNameSubscription" class="user-name"></span>
+                                <span id="userPlanSubscription" class="user-plan"></span>
+                            </div>
+                        </div>
+                        <a href="home.html" class="btn-link">Home</a>
+                        <a href="designer.html" class="btn-link">Designer</a>
+                        <button id="logoutBtnSubscription" class="btn-link logout" style="display: none;">Logout</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <p><strong>Contact:</strong> Arun Chandran</p>
+                <p>Email: <a href="mailto:arun.chandran@thequeenai.com">arun.chandran@thequeenai.com</a></p>
+            </div>
+
+            <!-- Current Plan Display -->
+            <div id="currentPlanDisplay" class="current-plan"></div>
+
+            <!-- Subscription Plans -->
+            <div class="subscription-section">
+                <h3>Available Plans</h3>
+                <div class="plans-grid">
+                    <div class="plan-card" data-plan="trial">
+                        <div class="plan-badge free">Free</div>
+                        <h4>Free Trial</h4>
+                        <div class="plan-price">
+                            <span class="price">₹0</span>
+                            <span class="period">30 days</span>
+                        </div>
+                        <ul class="plan-features">
+                            <li>✓ 30 days free access</li>
+                            <li>✓ All features included</li>
+                            <li>✓ Full website builder</li>
+                        </ul>
+                        <button type="button" class="plan-select-btn" data-plan="trial">Select Plan</button>
+                    </div>
+
+                    <div class="plan-card popular" data-plan="monthly">
+                        <div class="plan-badge popular-badge">Popular</div>
+                        <h4>Monthly Plan</h4>
+                        <div class="plan-price">
+                            <span class="price">₹30</span>
+                            <span class="period">per month</span>
+                        </div>
+                        <ul class="plan-features">
+                            <li>✓ 1 month access</li>
+                            <li>✓ All features included</li>
+                            <li>✓ Priority support</li>
+                            <li>✓ Regular updates</li>
+                        </ul>
+                        <button type="button" class="plan-select-btn" data-plan="monthly">Select Plan</button>
+                    </div>
+
+                    <div class="plan-card" data-plan="yearly">
+                        <div class="plan-badge save">Save 17%</div>
+                        <h4>Yearly Plan</h4>
+                        <div class="plan-price">
+                            <span class="price">₹300</span>
+                            <span class="period">per year</span>
+                        </div>
+                        <ul class="plan-features">
+                            <li>✓ 12 months access</li>
+                            <li>✓ All features included</li>
+                            <li>✓ Priority support</li>
+                            <li>✓ Best value</li>
+                        </ul>
+                        <button type="button" class="plan-select-btn" data-plan="yearly">Select Plan</button>
+                    </div>
+
+                    <div class="plan-card premium" data-plan="lifetime">
+                        <div class="plan-badge premium-badge">Best Deal</div>
+                        <h4>Lifetime</h4>
+                        <div class="plan-price">
+                            <span class="price">₹1,000</span>
+                            <span class="period">one-time</span>
+                        </div>
+                        <ul class="plan-features">
+                            <li>✓ Lifetime access</li>
+                            <li>✓ All features forever</li>
+                            <li>✓ Premium support</li>
+                            <li>✓ All future updates</li>
+                        </ul>
+                        <button type="button" class="plan-select-btn" data-plan="lifetime">Select Plan</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Section (Hidden initially) -->
+            <div id="paymentSection" class="payment-section" style="display: none;">
+                <h3>Complete Payment</h3>
+                <div class="payment-details">
+                    <div class="selected-plan-info">
+                        <h4 id="selectedPlanName"></h4>
+                        <p class="amount">Amount: ₹<span id="paymentAmount">0</span></p>
+                    </div>
+                    
+                    <div class="payment-methods">
+                        <h4>Pay via UPI</h4>
+                        <div class="upi-details">
+                            <p><strong>UPI ID:</strong> 9360218198@paytm</p>
+                            <p><strong>Phone:</strong> 9360218198</p>
+                            <p class="amount-display">Amount to Pay: ₹<span id="upiAmount">0</span></p>
+                        </div>
+
+                        <!-- QR Code -->
+                        <div class="qr-container">
+                            <h5>Scan QR Code to Pay</h5>
+                            <div id="qrCode" class="qr-code">
+                                <!-- QR code will be generated here -->
+                            </div>
+                            <p class="qr-instructions">
+                                Scan this QR code with any UPI app (PhonePe, Google Pay, Paytm, etc.) to complete payment
+                            </p>
+                        </div>
+
+                        <div class="manual-payment">
+                            <p><strong>Or send payment directly:</strong></p>
+                            <div class="manual-details">
+                                <p>UPI Number: <strong>9360218198</strong></p>
+                                <p>Amount: ₹<span id="manualAmount">0</span></p>
+                            </div>
+                        </div>
+
+                        <div class="payment-actions">
+                            <button id="cancelPayment" class="btn-cancel">Cancel</button>
+                            <button id="confirmPayment" class="btn-confirm">I Have Paid</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="back-to-designer">
+                <a href="designer.html" class="back-link">← Back to Designer</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/subscription.js"></script>
+</body>
+</html>

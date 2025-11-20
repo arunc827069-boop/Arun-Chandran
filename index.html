@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="Sign In to The Queen AI - AI-Powered Website Builder">
+    <title>Sign In - The Queen AI</title>
+    <link rel="content://media/external/file/1000157461/stylesheet" href="css/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <h1>The Queen AI</h1>
+                <p>Sign in to start creating your website</p>
+            </div>
+            
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <p><strong>Contact:</strong> Arun Chandran</p>
+                <p>Email: <a href="mailto:arun.chandran@thequeenai.com">arun.chandran@thequeenai.com</a></p>
+            </div>
+            
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required autocomplete="username" placeholder="Enter your username">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required autocomplete="current-password" placeholder="Enter your password">
+                </div>
+                
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="rememberMe">
+                        <span>Remember me</span>
+                    </label>
+                    <a href="#" class="forgot-link">Forgot password?</a>
+                </div>
+                
+                <button type="submit" class="btn-login">Sign In</button>
+                
+                <div class="signup-link">
+                    <p>Don't have an account? <a href="signup.html" id="signupLink">Sign up</a></p>
+                </div>
+            </form>
+            
+            <div id="errorMessage" class="error-message" style="display: none;"></div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/login.js"></script>
+    <script>
+        // Redirect to home after successful login (if coming from home)
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if user just logged in and redirect to home
+            if (Auth.isAuthenticated() && !sessionStorage.getItem('fromLogin')) {
+                const userRole = localStorage.getItem('queen_ai_user_role');
+                if (userRole === 'admin') {
+                    // Admin goes to home page
+                    window.location.href = 'home.html';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
